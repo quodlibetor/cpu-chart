@@ -12,7 +12,6 @@ def chart(data):
     line_chart = pygal.Line()
     line_chart.title = 'CPU Usage History in %'
     line_chart.x_labels = map(label, list(range(-10, 0)))
-    print(data)
     data = [d * 100 for d in data]  # convert each point to percent
     line_chart.add("User", data)
     line_chart.render_to_file("chart.svg")
@@ -41,7 +40,6 @@ def loop():
         new_user, new_total = get_cpu()
 
         avg = (new_user - user) / (new_total - total)
-        print(avg)
         history.append(avg)
         history = history[-10:]  # just the most recent ten values
 
