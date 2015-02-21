@@ -1,3 +1,4 @@
+import os
 import time
 
 import pygal
@@ -14,7 +15,8 @@ def chart(data):
     print(data)
     data = [d * 100 for d in data]  # convert each point to percent
     line_chart.add("User", data)
-    line_chart.render_to_file("the_chart.svg")
+    line_chart.render_to_file("chart.svg")
+    os.rename("chart.svg", "the_chart.svg")
 
 
 def get_cpu():
