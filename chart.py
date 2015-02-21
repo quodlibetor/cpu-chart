@@ -9,7 +9,9 @@ def label(time):
 
 
 def chart(data):
-    line_chart = pygal.Line()
+    line_chart = pygal.Line(
+        range=(0, 100)  # set the y-axis range
+    )
     line_chart.title = 'CPU Usage History in %'
     line_chart.x_labels = map(label, list(range(-10, 0)))
     data = [d * 100 for d in data]  # convert each point to percent
