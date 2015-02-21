@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>CPU History</title>
+    </head>
+
+    <body>
+        <!-- This will change every second while the script writes it out -->
+        <img src="the_chart.svg" width="500px"/>
+
+        <!-- This just reloads the page every second -->
+        <script type="text/javascript">
+            setTimeout(function(){
+                window.location.reload(1);
+            }, 1000);
+        </script>
+    </body>
+</html>
